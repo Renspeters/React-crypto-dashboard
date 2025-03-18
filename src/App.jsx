@@ -18,9 +18,10 @@ function App() {
         <div className="container-1">
           <div className="row-1">
             <div className="col-1">
-            <h1>CryptoPuls</h1>
-            <p>Klik om de laatste currency te bekijken</p>
-            <a id="get-prices" href="#market">Bekijken</a>
+              <h1>CryptoPuls</h1>
+              <p>Klik om de laatste currency te bekijken</p>
+              <a id="get-prices" href="#market">Bekijken</a>
+              <h4>test</h4>
             </div>
           </div>
         </div>
