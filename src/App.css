@@ -6,7 +6,21 @@
   align-items: center;
   text-align: center;
 }
-
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* .main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+} */
 /* .logo {
   height: 6em;
   padding: 1.5em;
