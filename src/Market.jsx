@@ -14,7 +14,7 @@ const PriceCards = () => {
           'https://api.coingecko.com/api/v3/coins/markets',
           {
             params: {
-              vs_currency: 'usd',
+              vs_currency: 'eur',
               order: 'market_cap_desc',
               per_page: 50,
               page: 1,
@@ -32,7 +32,7 @@ const PriceCards = () => {
   }, []);
 
   return (
-    <Container fluid>
+    <Container fluid className='market-container'>
       <Row>
       <h2 className="market-title">CryptoPulse current market</h2>
       <div className="price-cards-container">
@@ -47,7 +47,7 @@ const PriceCards = () => {
               }
             >
               <p className="coin-price">
-                ${coin.current_price.toLocaleString()}
+                €{coin.current_price.toLocaleString()}
               </p>
               <p className="price-change">
                 {coin.price_change_percentage_24h.toFixed(2)}%

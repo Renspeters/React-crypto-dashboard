@@ -1,10 +1,10 @@
 #root {
   width: auto;
   margin-top: 0;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center; */
 }
 
 /* General styling */
@@ -13,12 +13,14 @@ body {
   font-family: Arial, sans-serif;
   background-color: #333;
   color: #cecece;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center; */
 }
-
+.header{
+  width: 100%;
+}
 /* Header styling */
 .app-header {
   background-color: #282c34;
@@ -52,7 +54,17 @@ body {
 }
 
 /* Market page styling */
-
+.market-container {
+  margin-top: 20px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+.home-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .market-title {
   font-size: 28px;
   margin-bottom: 20px;
