@@ -34,7 +34,7 @@ const PriceCards = () => {
   return (
     <Container fluid className='market-container'>
       <Row>
-      <h2 className="market-title">CryptoPulse current market</h2>
+      <h2 className="market-title">Current market</h2>
       <div className="price-cards-container">
         {coins.map((coin) => (
           <div key={coin.id} className="price-card">

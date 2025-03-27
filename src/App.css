@@ -1,5 +1,5 @@
 #root {
-  width: auto;
+  width: 100%;
   margin-top: 0;
   /* display: flex;
   justify-content: center;
@@ -18,8 +18,17 @@ body {
   align-items: center;
   text-align: center; */
 }
+
 .header{
   width: 100%;
+}
+.homepage-container{
+  height: 200px;
+  margin-top: 100px;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
 }
 /* Header styling */
 .app-header {
@@ -56,9 +65,11 @@ body {
 /* Market page styling */
 .market-container {
   margin-top: 20px;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center; */
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
 }
 .home-container{
   display: flex;
@@ -110,6 +121,9 @@ body {
 .negative {
   color: red;
 }
+#logo{
+  border-radius: 10px;
+}
 
 @keyframes logo-spin {
   from {
@@ -155,11 +169,11 @@ li a:hover {
   color: #f7931a;
 }
 .price-card{
-  height: 150px;
+  height: 255px;
   width: 260px;
   background-color: #888;
-  gap: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
