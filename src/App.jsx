@@ -6,12 +6,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Row } from 'react-bootstrap';
+import { NavLink, Row } from 'react-bootstrap';
+import ProductPage from './ProductPage';
 
 export default function App(){
   return (
     <>
-    <Navbar expand="lg" className="bg-body-tertiary" fixed='top'>
+    <Navbar expand="lg" className="bg-body-tertiary" fixed='top' background="red">
       <Container>
       <img
               src="/cryptoLogo.png"
@@ -27,6 +28,7 @@ export default function App(){
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/market">Market</Nav.Link>
+            <Nav.Link href="/product">Product</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -34,6 +36,7 @@ export default function App(){
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/market" element={<Market />} />
+      <Route path="/product/:id" element={<ProductPage />} />
     </Routes>
 
     </>
