@@ -5,22 +5,28 @@ import { useEffect, useRef, useState } from 'react';
 import { Chart } from 'chart.js/auto';
 
 export default function Homepage() {
-  const chartRef = useRef(null); 
-  const canvasRef = useRef(null);
-  const [chartData, setChartData] = useState(null);
+  const chartRef = useRef(null); // Ref voor de Chart.js-instantie
+  const canvasRef = useRef(null); // Ref voor het canvas-element
+  const [chartData, setChartData] = useState(null); // State om API-data op te slaan
+  
+  
 
   useEffect(() => {
-
+    // Functie om data van de API op te halen
     const fetchData = async () => {
       try {
         const response = await fetch(
-          'https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=50&page=1'
+          'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=eur&days=7'
         );
         const data = await response.json();
 
-        const labels = data.map((coin) => coin.name); 
-        const prices = data.map((coin) => coin.current_price); 
+        // Verwerk de data voor de grafiek
+        const labels = data.prices.map((price) =>
+          new Date(price[0]).toLocaleDateString()
+        );
+        const prices = data.prices.map((price) => price[1]);
 
+        // Sla de verwerkte data op in de state
         setChartData({ labels, prices });
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -32,24 +38,25 @@ export default function Homepage() {
 
   useEffect(() => {
     if (!canvasRef.current || !chartData) return;
+
     const ctx = canvasRef.current.getContext('2d');
+
+    // Controleer of er al een grafiek bestaat en vernietig deze
     if (chartRef.current) {
       chartRef.current.destroy();
     }
+
+    // Maak een nieuwe Chart.js-instantie met de opgehaalde data
     chartRef.current = new Chart(ctx, {
-      type: 'doughnut', 
+      type: 'line',
       data: {
-        labels: chartData.labels,
+        labels: chartData.labels, // Labels van de API
         datasets: [
           {
-            label: 'Current Price (EUR)',
-            data: chartData.prices, 
-            backgroundColor: chartData.labels.map(
-              (_, index) =>
-                `hsl(${(index * 360) / chartData.labels.length}, 70%, 50%)`
-            ), 
-            borderColor: '#ffffff',
-            borderWidth: 1,
+            label: 'Bitcoin Price (EUR)',
+            data: chartData.prices, // Prijzen van de API
+            borderColor: '#F7931A',
+            borderWidth: 2,
           },
         ],
       },
@@ -59,25 +66,17 @@ export default function Homepage() {
           legend: {
             position: 'top',
           },
-          tooltip: {
-            callbacks: {
-              label: function (context) {
-                const label = context.label || '';
-                const value = context.raw || 0;
-                return `${label}: €${value.toLocaleString()}`;
-              },
-            },
-          },
         },
       },
     });
 
+    // Clean-up functie om de bestaande grafiek te vernietigen
     return () => {
       if (chartRef.current) {
         chartRef.current.destroy();
       }
     };
-  }, [chartData]);
+  }, [chartData]); // Voer deze useEffect alleen uit als chartData verandert
 
   return (
     <Container fluid className="main-container">
@@ -98,6 +97,7 @@ export default function Homepage() {
         </Row>
       </Container>
 
+      {/* Tweede sectie */}
       <Container className="homepage-section">
         <Row className="homepage-chart">
           <Col>
