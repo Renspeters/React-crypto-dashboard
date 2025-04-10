@@ -10,6 +10,7 @@ import { NavLink, Row } from 'react-bootstrap';
 import ProductPage from './ProductPage';
 import Favorites from './Favorites';
 import SearchBar from './SearchBar';
+import Card from 'react-bootstrap/Card';
 
 export default function App(){
   return (
@@ -43,7 +44,14 @@ export default function App(){
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/searchbar" element={<SearchBar />} />
     </Routes>
-
+    <Card.Footer>
+      <Row className="footer">
+        <div className="footer-text">
+          <p>CryptoPulse © 2023</p>
+          <p>All rights reserved.</p>
+        </div>
+      </Row>
+    </Card.Footer>
     </>
   );
 }

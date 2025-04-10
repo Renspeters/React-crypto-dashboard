@@ -138,8 +138,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #333;
+  background-color: #f9f9f9;
   padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 .price-card:hover {
   transform: translateY(-5px);
@@ -155,22 +158,31 @@ img{
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
+  max-width: 150px;
+  margin-bottom: 0px;
 }
 
 .coin-name {
   font-size: 20px;
   margin: 10px 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
 }
 
 .coin-symbol {
   font-size: 14px;
   color: #666;
+  font-size: 18px;
+  margin-bottom: 0px;
 }
 
 .coin-price {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0;
+  font-size: 18px;
+  margin-bottom: 0px;
 }
 
 .price-change {
@@ -312,4 +324,16 @@ li a:hover {
 .no-results {
   color: #999;
   font-style: italic;
+}
+
+.coin-market-cap,
+.coin-change {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.coin-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
 }
