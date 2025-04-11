@@ -1,10 +1,6 @@
 #root {
   width: 100%;
   margin-top: 0;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; */
 }
 #myChart{
   width: 200px;
@@ -16,17 +12,18 @@ body {
   font-family: Arial, sans-serif;
   background-color: #333;
   color: #cecece;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; */
+}
+.navbar{
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .navbar.bg-body-tertiary {
-  background-color: #333 !important; /* Gebruik !important om Bootstrap-styling te overschrijven */
-  color: #f7931a; /* Gebruik !important om Bootstrap-styling te overschrijven */
+  background-color: #333 !important; /* overschrijd de styling van bootstrap */
+  color: #f7931a;
 }
 .custom-link {
-  color: #f7931a;
+  color: #f7931a !important;
   text-decoration: none;
 }
 .header{
@@ -138,11 +135,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f9f9f9;
+  text-align: center;
+  background-color: #333;
   padding: 20px;
-  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
+  min-height: 100vh;
 }
 .price-card:hover {
   transform: translateY(-5px);
@@ -335,5 +333,25 @@ li a:hover {
 .coin-description {
   font-size: 16px;
   line-height: 1.5;
-  color: #555;
+  color: #ffffff;
+}
+#coin-description-title {
+  color: #ffffff;
+}
+p{
+  color: #ffffff;
+}
+.footer {
+  background-color: #333;
+  color: #f7931a;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+.footer-content p {
+  margin: 5px 0;
+  font-size: 14px;
 }

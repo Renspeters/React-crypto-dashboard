@@ -59,7 +59,6 @@ const PriceCards = () => {
                   {coin.price_change_percentage_24h.toFixed(2)}%
                 </p>
               </div>
-              {/* Voeg een knop toe om naar de ProductPage te navigeren */}
               <button
                 onClick={() => goToProductPage(coin.id)}
                 className="product-button"
